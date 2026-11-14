@@ -1,0 +1,19 @@
+{
+  "dependencies": {
+    "dotenv": "^18.0.10",
+    "mongodb": "^7.9.0",
+    "pg": "^8.23.1",
+    "react": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/jest": "^30.0.0",
+    "@types/node": "^26.6.6",
+    "@types/pg": "^8.23.1",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "jest": "^30.5.2",
+    "ts-jest": "^29.4.15",
+    "ts-node": "^10.9.2",
+    "typescript": "^6.0.3"
+  }
+}
