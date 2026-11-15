@@ -1,7 +1,7 @@
-// @/tests/qa-framework.test.ts
+import 'dotenv/config';
 import { PostgresProjectRepo } from '../repositories/PostgresProjectRepo';
 import { MongoProjectRepo } from '../repositories/MongoProjectRepo';
-import { pgPool, getMongoDb } from '../lib/db';
+import { pgPool, closeMongoDb } from '../lib/db';
 import { describe, test, expect, afterAll } from '@jest/globals';
 
 describe('Polyglot Persistence QA Framework', () => {
@@ -10,7 +10,7 @@ describe('Polyglot Persistence QA Framework', () => {
 
   afterAll(async () => {
     await pgPool.end();
-    // Assuming MongoDB client closure is handled in a teardown utility
+    await closeMongoDb(); 
   });
 
   describe('1. Relational (SQL) CRUD & Integrity Tests', () => {
