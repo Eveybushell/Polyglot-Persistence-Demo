@@ -19,8 +19,8 @@ async function runTests() {
   const fullPgProject = await pgRepo.getProjectWithTasks(pgProject.id);
   console.dir(fullPgProject, { depth: null });
   
-  await pgRepo.deleteProject(pgProject.id);
-  console.log('[PostgreSQL] Project and cascaded tasks deleted.');
+  // await pgRepo.deleteProject(pgProject.id);
+  // console.log('[PostgreSQL] Project and cascaded tasks deleted.');
 
   // 2. Test Non-Relational (MongoDB)
   console.log('\n[MongoDB] Initializing...');
@@ -35,8 +35,8 @@ async function runTests() {
   const fullMongoProject = await mongoRepo.getProjectWithTasks(mongoProject._id.toString());
   console.dir(fullMongoProject, { depth: null });
   
-  await mongoRepo.deleteProject(mongoProject._id.toString());
-  console.log('[MongoDB] Document and embedded array deleted.');
+  // await mongoRepo.deleteProject(mongoProject._id.toString());
+  // console.log('[MongoDB] Document and embedded array deleted.');
 
   // Cleanup
   await pgPool.end();
